@@ -1234,7 +1234,7 @@ static void check_usecases_codec_backend(struct audio_device *adev,
                 (usecase->devices & AUDIO_DEVICE_OUT_ALL_A2DP) ||
                 (usecase->devices & AUDIO_DEVICE_OUT_ALL_SCO)) &&
                 ((force_restart_session) ||
-                (platform_check_backends_match(snd_device, usecase->out_snd_device)))) {
+                match)) {
                 ALOGD("%s:becf: check_usecases (%s) is active on (%s) - disabling ..",
                     __func__, use_case_table[usecase->id],
                       platform_get_snd_device_name(usecase->out_snd_device));
